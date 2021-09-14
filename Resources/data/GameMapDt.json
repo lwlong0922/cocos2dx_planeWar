@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1001,
+        "mapImg": "img_bg_level_1.jpg",
+        "enemyKind":
+        [
+            2001
+        ],
+        "enemyCountPerWave":
+        [
+            1003,
+            1003,
+            1003
+        ],
+        "everyTimePerWave": 3
+    },
+    {
+        "id": 1002,
+        "mapImg": "img_bg_level_2.jpg",
+        "enemyKind":
+        [
+            2001,
+            2002
+        ],
+        "enemyCountPerWave":
+        [
+            3,
+            3,
+            3
+        ],
+        "everyTimePerWave": 3
+    },
+    {
+        "id": 1003,
+        "mapImg": "img_bg_level_3.jpg",
+        "enemyKind":
+        [
+            2001,
+            2002,
+            2003
+        ],
+        "enemyCountPerWave":
+        [
+            3,
+            3,
+            3
+        ],
+        "everyTimePerWave": 3
+    },
+    {
+        "id": 1004,
+        "mapImg": "img_bg_level_4.jpg",
+        "enemyKind":
+        [
+            2001,
+            2002,
+            2003
+        ],
+        "enemyCountPerWave":
+        [
+            3,
+            3,
+            3
+        ],
+        "everyTimePerWave": 3
+    },
+    {
+        "id": 1005,
+        "mapImg": "img_bg_level_5.jpg",
+        "enemyKind":
+        [
+            2001,
+            2002,
+            2003
+        ],
+        "enemyCountPerWave":
+        [
+            3,
+            3,
+            3
+        ],
+        "everyTimePerWave": 3
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "nId": 1,
+        "RoleName": "Player",
+        "path": "image/GameMap/player.plist",
+        "Animation":
+        [
+            {
+                "name": "player1",
+                "delayPerUnit": 0.2,
+                "startId": 1,
+                "endId": 11,
+                "ImageName": "player1_%d.png"
+            },
+            {
+                "name": "player2",
+                "startId": 1,
+                "endId": 11,
+                "delayPerUnit": 0.1,
+                "ImageName": "player2_%d.png"
+            },
+            {
+                "name": "player3",
+                "startId": 1,
+                "endId": 11,
+                "delayPerUnit": 0.2,
+                "ImageName": "player3_%d.png"
+            },
+            {
+                "name": "player4",
+                "startId": 1,
+                "endId": 11,
+                "delayPerUnit": 0.2,
+                "ImageName": "playey4_%d.png"
+            }
+        ]
+    }
+]
