@@ -14,6 +14,7 @@ bool GameMapScene::init()
 	if (!Scene::initWithPhysics())
 	{
 		return false;
+
 	}
 	this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
