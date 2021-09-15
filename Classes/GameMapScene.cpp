@@ -1,5 +1,6 @@
 ﻿#include "GameMapScene.h"
 #include "Player.h"
+#include "BulletLay.h"
 GameMapScene::~GameMapScene()
 {
 
@@ -19,8 +20,11 @@ bool GameMapScene::init()
 	this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
 	addBg("img_bg_level_1.jpg");
+
+	addBulletLayer();
 	addPlayer();
 	scheduleUpdate();
+
 	return true;
 }
 
@@ -37,6 +41,13 @@ void GameMapScene::addBg(std::string strBackGroundName)
 	m_backgrounds[1]->setPosition(Vec2(0, visibleSize.height));
 	addChild(m_backgrounds[0], -1);
 	addChild(m_backgrounds[1], -1);
+}
+
+void GameMapScene::addBulletLayer()
+{
+	auto bulletlayer = CBulletLay::create();
+	bulletlayer->addBullet(Director::getInstance()->getVisibleSize() / 2, 3001);
+	addChild(bulletlayer);
 }
 
 void GameMapScene::addPlayer()

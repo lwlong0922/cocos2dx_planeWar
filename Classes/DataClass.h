@@ -68,6 +68,8 @@ class CBulletDt :public CDataBase
 public:
 	int id;
 	string mapName;
+	int width;
+	int height;
 };
 
 class CBulletDtMgr : public CDataBaseMgr

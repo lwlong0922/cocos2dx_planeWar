@@ -1,6 +1,7 @@
 ﻿#include "BulletLay.h"
 #include "DataMgr.h"
 #include "DataClass.h"
+
 CBulletLay::CBulletLay()
 {
 }
@@ -21,7 +22,11 @@ bool CBulletLay::init()
 
 void CBulletLay::addBullet(Vec2 startPos, int nBulletId)
 {
-	//auto pBulletDt = CDataMgr::getInstance()->getMgr("bulletDtMgt")->getDataByID<CBulletDt>(nBulletId);
-
-
+	nBulletId = 3001;
+	auto pBulletDt = (CDataMgr::getInstance()->getMgr("bulletDtMgr"))->getDataByID<CBulletDt*>(nBulletId);
+	auto bullet = CBullet::createWithBulletDt(pBulletDt);
+	bullet->setPosition(startPos);
+	m_vecBullet.push_back(bullet);
+	//bullet->setScale(0.3);
+	addChild(bullet);
 }

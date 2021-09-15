@@ -1,22 +1,32 @@
 [
 	{
 		"id": 3001,
-		"imgName": "zidan_1.png"
+		"imgName": "zidan_1.png",
+		"width": 10,
+		"height": 38
 	},
 	{
 		"id": 3002,
-		"imgName": "daodan_1.png"
+		"imgName": "daodan_1.png",
+		"width": 10,
+		"height": 38
 	},
 	{
 		"id": 3003,
-		"imgName": "daodan_2.png"
+		"imgName": "daodan_2.png",
+		"width": 10,
+		"height": 30
 	},
 	{
 		"id": 3004,
-		"imgName": "daodan_3.png"
+		"imgName": "daodan_3.png",
+		"width": 15,
+		"height": 18
 	},
 	{
 		"id": 3005,
-		"imgName": "feidan_1.png"
+		"imgName": "feidan_1.png",
+		"width": 10,
+		"height": 38
 	}
 ]

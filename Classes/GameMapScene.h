@@ -10,6 +10,7 @@ public:
 	CREATE_FUNC(GameMapScene);
 	bool init() override;
 	void addBg(std::string strBackGroundName);
+	void addBulletLayer();
 	void addPlayer();
 	void update(float delta) override;
 private:

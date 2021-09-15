@@ -11,7 +11,7 @@ void CLoader::loadConfig()
 	CDataMgr::getInstance()->addMgr("gameMapDtMgr", cGameMapDtMgr);
 
 	CBulletDtMgr* cBulletDtMgr = new CBulletDtMgr();
-	cGameMapDtMgr->LoadFile("data/BulletDt.json");
+	cBulletDtMgr->LoadFile("data/BulletDt.json");
 	CDataMgr::getInstance()->addMgr("bulletDtMgr", cBulletDtMgr);
 }
 
@@ -75,6 +75,8 @@ void CBulletDtMgr::parse(const Document& pDoc)
 		auto bulletDt = new CBulletDt();
 		bulletDt->nID = pDoc[i]["id"].GetInt();
 		bulletDt->mapName = pDoc[i]["imgName"].GetString();
+		bulletDt->width = pDoc[i]["width"].GetInt();
+		bulletDt->height = pDoc[i]["height"].GetInt();
 		m_vecDatas.push_back(bulletDt);
 	}
 }
