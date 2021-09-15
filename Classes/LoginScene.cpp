@@ -48,8 +48,6 @@ inline bool CLoginScene::init()
 
 	addChild(pMenuBtn);
 
-
-
 	return true;
 }
 

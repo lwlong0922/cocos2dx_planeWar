@@ -18,6 +18,7 @@ bool HelloWorld::init()
 	}
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("image/login.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("image/GameMap/gameMapBg.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("image/GameMap/bullet.plist");
 
 
 	auto pLogo = Sprite::createWithSpriteFrameName("tencentlogo.png");
@@ -26,9 +27,9 @@ bool HelloWorld::init()
 	addChild(pLogo);
 
 	scheduleOnce([=](float)
-	{
-		Director::getInstance()->replaceScene(CLoginScene::create());
-	}, 1.0f, "gotoLogin");
+				 {
+					 Director::getInstance()->replaceScene(CLoginScene::create());
+				 }, 1.0f, "gotoLogin");
 
 	return true;
 }

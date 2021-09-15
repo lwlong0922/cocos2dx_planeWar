@@ -1,22 +1,22 @@
 [
 	{
-		"id":3001,
-		"img":"zidan_1.png"
-	},
-	{	
-		"id":3002,
-		"img":"daodan_1.png"
-	},
-	{	
-		"id":3003,
-		"img":"daodan_2.png"
+		"id": 3001,
+		"imgName": "zidan_1.png"
 	},
 	{
-		"id":3004,
-		"img":"daodan_3.png"
+		"id": 3002,
+		"imgName": "daodan_1.png"
 	},
-	{	
-		"id":3005,
-		"img":"feidan_1.png"
+	{
+		"id": 3003,
+		"imgName": "daodan_2.png"
+	},
+	{
+		"id": 3004,
+		"imgName": "daodan_3.png"
+	},
+	{
+		"id": 3005,
+		"imgName": "feidan_1.png"
 	}
 ]
