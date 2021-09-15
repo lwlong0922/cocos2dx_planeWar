@@ -1,11 +1,11 @@
 ﻿#include "MoveBase.h"
 
 CMoveBase::CMoveBase()
-:m_pOwner(nullptr),
-m_fAccel(0),
-m_fSpeed(0),
-m_fAngle(0),
-m_pTarget(nullptr)
+	:m_pOwner(nullptr),
+	m_fAccel(0),
+	m_fSpeed(0),
+	m_fAngle(0),
+	m_pTarget(nullptr)
 {
 }
 
@@ -18,9 +18,12 @@ void CMoveBase::onUpdate(float fDelta)
 
 }
 
-void CMoveBase::setProperty(float fSpeed, float fAccel, float fAngle)
+void CMoveBase::setProperty(CBulletDt* pBulletDt)
 {
-	m_fSpeed = fSpeed;
-	m_fAccel = fAccel;
-	m_fAngle = fAngle;
+
+	m_fSpeed = pBulletDt->moveSpeed;
+	m_fAccel = pBulletDt->fBulletAccel;
+	//m_fAngle = CC_DEGREES_TO_RADIANS(pRoleDt->fBulletAngle);
+	m_fAngleSpeed = pBulletDt->fBulletAngleSpeed;
+	m_fRadius = pBulletDt->fBulletRadius;
 }

@@ -75,8 +75,13 @@ void CBulletDtMgr::parse(const Document& pDoc)
 		auto bulletDt = new CBulletDt();
 		bulletDt->nID = pDoc[i]["id"].GetInt();
 		bulletDt->mapName = pDoc[i]["imgName"].GetString();
+		bulletDt->moveType = pDoc[i]["moveType"].GetString();
 		bulletDt->width = pDoc[i]["width"].GetInt();
 		bulletDt->height = pDoc[i]["height"].GetInt();
+		bulletDt->moveSpeed = pDoc[i]["moveSpeed"].GetInt();
+		bulletDt->fBulletAccel = pDoc[i]["fBulletAccel"].GetInt();
+		bulletDt->fBulletRadius = pDoc[i]["fBulletRadius"].GetInt();
+		bulletDt->fBulletAngleSpeed = pDoc[i]["fBulletAngleSpeed"].GetInt();
 		m_vecDatas.push_back(bulletDt);
 	}
 }

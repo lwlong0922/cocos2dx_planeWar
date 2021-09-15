@@ -1,5 +1,5 @@
 ﻿#include "Bullet.h"
-
+#include "MoveCtrl.h"
 
 CBullet* CBullet::createWithBulletDt(CBulletDt* pBulletDt)
 {
@@ -23,8 +23,15 @@ void CBullet::init(CBulletDt* pBulletDt)
 	physicsBody->setGravityEnable(false);
 	physicsBody->setCategoryBitmask(0x02);
 	physicsBody->setCollisionBitmask(0x04);
-	//physicsBody->setContactTestBitmask(0x01);
 	setPhysicsBody(physicsBody);
+
+
+	m_pMoveBase = CMoveCtrl::getInstance()->createMove(pBulletDt->moveType);
+	m_pMoveBase->setOwner(this);
+	m_pMoveBase->setProperty(pBulletDt);
+	this->scheduleUpdate();
+	//physicsBody->setContactTestBitmask(0x01);
+
 
 
 	//if ((shapeA->getCategoryBitmask() & shapeB->getCollisionBitmask()) == 0
@@ -34,4 +41,20 @@ void CBullet::init(CBulletDt* pBulletDt)
 	//	ret = false;
 	//}
 
+}
+
+void CBullet::update(float delta)
+{
+	//调用移动控制器的onUpdate
+	m_pMoveBase->onUpdate(delta);
+	Vec2 pos = getPosition();
+	Size winSize = Director::getInstance()->getVisibleSize();
+	//移除。
+	if (pos.x <= -100
+		|| pos.y <= -100
+		|| pos.x > winSize.width + 100
+		|| pos.y > winSize.height + 100)
+	{
+		removeFromParent();
+	}
 }

@@ -120,7 +120,7 @@ void Player::fire()
 			//导演类.getRunningScene
 			//主场景设置成单例。
 			//CGameScene::getInstance()->拿到子弹层（不想用getChildByName，创建的时候要设置名字，拿到之后是node类型，还要转换类型CBulletLayer*）
-			GameMapScene::getInstance()->getBulletLayer()->addBullet(getPosition(), 3001);
+			GameMapScene::getInstance()->getBulletLayer()->addBullet(getPosition(), 3001, 3);
 		}, 0.2f, "addBullet");
 }
 

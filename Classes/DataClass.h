@@ -67,9 +67,14 @@ class CBulletDt :public CDataBase
 {
 public:
 	int id;
-	string mapName;
 	int width;
 	int height;
+	int moveSpeed;
+	int fBulletAccel;
+	int fBulletRadius;
+	int fBulletAngleSpeed;
+	string mapName;
+	string moveType;
 };
 
 class CBulletDtMgr : public CDataBaseMgr

@@ -9,7 +9,7 @@ public:
 	CBulletLay();
 	~CBulletLay() override;
 	bool init() override;
-	void addBullet(Vec2 startPos, int nBulletId);
+	void addBullet(Vec2 startPos, int nBulletId, int count = 1, int angle = 0);
 	CREATE_FUNC(CBulletLay)
 private:
 	vector<CBullet*> m_vecBullet;
