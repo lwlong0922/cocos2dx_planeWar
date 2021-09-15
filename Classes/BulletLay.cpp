@@ -21,7 +21,7 @@ bool CBulletLay::init()
 
 void CBulletLay::addBullet(Vec2 startPos, int nBulletId)
 {
-	auto pBulletDt = CDataMgr::getInstance()->getMgr("bulletDtMgt")->getDataByID<CBulletDt>(nBulletId);
+	//auto pBulletDt = CDataMgr::getInstance()->getMgr("bulletDtMgt")->getDataByID<CBulletDt>(nBulletId);
 
 
 }

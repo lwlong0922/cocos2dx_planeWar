@@ -20,8 +20,12 @@ public:
 class CAnimateDt :public CDataBase
 {
 public:
-	CAnimateDt(){};
-	~CAnimateDt(){};
+	CAnimateDt()
+	{
+	};
+	~CAnimateDt()
+	{
+	};
 	string roleName;
 	map<string, CAnimationDt*> mapAnimation;
 };
@@ -29,8 +33,12 @@ public:
 class CAnimateDtMgr :public CDataBaseMgr
 {
 public:
-	CAnimateDtMgr(){};
-	~CAnimateDtMgr()override{};
+	CAnimateDtMgr()
+	{
+	};
+	~CAnimateDtMgr()override
+	{
+	};
 	void parse(const Document& pDoc) override;
 	Animate* getAnimateByName(const string roleName, const string animationName);
 private:
@@ -46,8 +54,12 @@ public:
 class CGameMapDtMgr :public CDataBaseMgr
 {
 public:
-	CGameMapDtMgr(){}
-	~CGameMapDtMgr()override{}
+	CGameMapDtMgr()
+	{
+	}
+	~CGameMapDtMgr()override
+	{
+	}
 	void parse(const Document& pDoc) override;
 };
 
@@ -61,8 +73,12 @@ public:
 class CBulletDtMgr : public CDataBaseMgr
 {
 public:
-	CBulletDtMgr(){}
-	~CBulletDtMgr() override {};
+	CBulletDtMgr()
+	{
+	}
+	~CBulletDtMgr() override
+	{
+	};
 	void parse(const Document& pDoc) override;
 };
 

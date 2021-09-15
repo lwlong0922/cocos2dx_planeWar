@@ -3,8 +3,7 @@
         "nId": 1,
         "RoleName": "Player",
         "path": "image/GameMap/player.plist",
-        "Animation":
-        [
+        "Animation": [
             {
                 "name": "player1",
                 "delayPerUnit": 0.2,
