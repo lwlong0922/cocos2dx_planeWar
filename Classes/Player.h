@@ -10,6 +10,7 @@ class Player :public Node
 public:
 	CREATE_FUNC(Player);
 	bool init() override;
+	void fire();
 	Sprite* getModel();
 	~Player() override;
 	void addEvent();

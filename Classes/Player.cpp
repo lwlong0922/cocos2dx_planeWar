@@ -1,6 +1,7 @@
 ﻿#include "Player.h"
 #include "DataMgr.h"
 #include "DataClass.h"
+#include "GameMapScene.h"
 bool Player::init()
 {
 	if (!Node::init())
@@ -13,6 +14,9 @@ bool Player::init()
 
 	m_model->setPosition(Vec2::ZERO);
 	addChild(m_model);
+
+
+
 
 	// auto animimation = Animation::create();
 	// for (int i = 1; i <= 11; i++)
@@ -30,6 +34,17 @@ bool Player::init()
 	auto ainimate = animateDtMgr->getAnimateByName("Player", "player1");
 	m_model->setScale(0.5f);
 	m_model->runAction(RepeatForever::create(ainimate));
+
+	auto  physicsBody = PhysicsBody::createBox(Size(50, 50),
+											   PhysicsMaterial(0.1f, 1.0f, 0.0f));
+	physicsBody->setGravityEnable(false);
+	physicsBody->setCategoryBitmask(0x01);
+	physicsBody->setCollisionBitmask(0x4);
+	//physicsBody->setContactTestBitmask(0x02);
+	setPhysicsBody(physicsBody);
+
+
+
 
 	auto progress = Node::create();
 	progress->setPosition(Vec2(0, m_model->getContentSize().height / 4));
@@ -55,7 +70,7 @@ bool Player::init()
 
 
 	addEvent();
-
+	fire();
 	return true;
 }
 
@@ -65,7 +80,7 @@ void Player::addEvent()
 	auto touchEvent = EventListenerTouchOneByOne::create();
 	touchEvent->onTouchBegan = [=](Touch* touch, Event* event)->bool
 	{
-		auto clickPos = touch->getLocation();
+		const auto clickPos = touch->getLocation();
 		auto rectModelBoudingBox = m_model->getBoundingBox();
 		rectModelBoudingBox.origin = this->convertToWorldSpace(rectModelBoudingBox.origin);
 
@@ -93,6 +108,20 @@ void Player::addEvent()
 		m_bMove = false;
 	};
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchEvent, this);
+
+
+}
+
+void Player::fire()
+{
+	this->schedule(
+		[=](float) {
+			//获取子弹层，调用添加子弹接口。
+			//导演类.getRunningScene
+			//主场景设置成单例。
+			//CGameScene::getInstance()->拿到子弹层（不想用getChildByName，创建的时候要设置名字，拿到之后是node类型，还要转换类型CBulletLayer*）
+			GameMapScene::getInstance()->getBulletLayer()->addBullet(getPosition(), 3001);
+		}, 0.2f, "addBullet");
 }
 
 Sprite* Player::getModel()

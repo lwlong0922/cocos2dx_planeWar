@@ -31,6 +31,7 @@ public:
 				return static_cast<T>(m_vecDatas[i]);
 			}
 		}
+		return nullptr;
 	}
 	vector<CDataBase*> getAllDatas() const
 	{

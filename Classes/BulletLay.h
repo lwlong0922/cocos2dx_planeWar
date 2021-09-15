@@ -14,7 +14,4 @@ public:
 private:
 	vector<CBullet*> m_vecBullet;
 };
-
-
-
 #endif
